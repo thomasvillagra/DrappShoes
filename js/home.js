@@ -1,7 +1,10 @@
 
-const pintarProductos = (data) =>{
-const contenedor = document.getElementById('producto-contenedor');
+//const pintarProductos = (data) =>{
+const contenedor = document.getElementById('producto-contenedor')
 
+fetch('../data/stock.json')
+.then(Response => Response.json())
+.then(data =>(
     data.forEach(producto => {
         const div = document.createElement('div');
         div.classList.add('card');
@@ -17,6 +20,6 @@ const contenedor = document.getElementById('producto-contenedor');
                         `
         contenedor.appendChild(div);
         
-    });
-    
-};
+    })
+    ))    
+//};
